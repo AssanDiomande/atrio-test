@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/vue">
+        console.log(Vue);
+        alert(11);
+    </script> 
+    <style>
+    a{
+        color: white;
+        
+    }
+    button{
+        padding: 10%;
+        width: 600px;
+        height: 200px;
+    }
+    #select{
+        margin: 10% 0 0 20%;
+    }
+    </style>
+    <body>
+        <div id="select">
+
+            <button class="rounded choices btn btn-primary">
+                <a>Voir un ou des utilisateurs : http://localhost:8000/api/user/[:id]</a>
+            </button>
+            <button class="rounded choices btn btn-primary">
+                <a>Creer un utilisateur : http://localhost:8000/api/user/create</a>
+            </button>
+            <br><br>
+            <button class="rounded choices btn btn-primary">
+                <a>Mettre à jour un utilisateur : http://localhost:8000/api/user/update/:id</a>
+            </button>
+            <button class="rounded choices btn btn-primary">
+                <a>Supprimer un utilisateur : http://localhost:8000/api/user/delete/:id</a>
+            </button>
+
+        </div>
+    </body>
+{% endblock %}

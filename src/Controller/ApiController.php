@@ -17,7 +17,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class ApiController extends AbstractController
 {
-
     /**
      * @Rest\Post("/user/create")
      * @ParamConverter("user", 

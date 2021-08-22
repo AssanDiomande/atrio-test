@@ -5,14 +5,13 @@
 {% block body %}
     <h1>Liste des utilisateurs</h1>
 
-    <table class="table">
-        <thead>
+    <table class="table table-bordered">
+        <thead class="thead-dark">  
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Date de naissance</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,16 +21,17 @@
                 <td>{{ user.firstname }}</td>
                 <td>{{ user.lastname }}</td>
                 <td>{{ user.birthdate ? user.birthdate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('user_new', {'id': user.id}) }}">Créer</a>
-                </td>
+
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun utilisateur</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+
+<a class="btn btn-primary" href="{{ path('user_new') }}">Créer un utilisateur</a>
+
 
 {% endblock %}

@@ -16,7 +16,12 @@ class UserType extends AbstractType
         $builder
             ->add('firstname',TextType::class)
             ->add('lastname',TextType::class)
-            ->add('birthdate',DateType::class)
+            ->add('birthdate',DateType::class, array(
+                'widget' => 'choice',
+                'years' => range(date('Y')-150, date('Y')),
+                'months' => range(1, 12),
+                'days' => range(1, 31),
+              ));
         ;
     }
 

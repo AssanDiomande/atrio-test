@@ -11,17 +11,17 @@ class MainController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function home()
+    public function homeAction()
     {
         return $this->render("home/index.html.twig");
     }
 
     /**
-     * @Route("/signin", name="signin")
+     * @Route("/doc_api", name="api_home")
      */
-    public function signin()
+    public function homeApiAction()
     {
-        return $this->render("home/connect.html.twig");
+        return $this->render("api/index.html.twig");
     }
 
 }
